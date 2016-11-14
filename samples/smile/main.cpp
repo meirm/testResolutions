@@ -1,12 +1,14 @@
 #include "opencv2/opencv.hpp"
 // g++ -o smile -I /home/ubuntu/opencv-3.1.0/include -O2 -g -Wall main.cpp -L /home/ubuntu/opencv-3.1.0/lib -lopencv_core  -lopencv_highgui -lopencv_video  -lopencv_videoio  -std=gnu++11
+
+// LD_LIBRARY_PATH=/home/ubuntu/opencv-3.1.0/lib ./smile 800 600 0
 using namespace cv;
 int x,y;
 int main(int argc, char** argv)
 {
     x=atoi(argv[1]);
     y=atoi(argv[2]);
-    VideoCapture cap(1);
+    VideoCapture cap(atoi(argv[3]));
     // open the default camera, use something different from 0 otherwise;
     // Check VideoCapture documentation.
     if(!cap.isOpened())
