@@ -47,7 +47,7 @@ void CaptureFrames() {
   capture >> CameraFrame[1 - framePointer];
   framePointer = 1 - framePointer;
   currentFrame = &CameraFrame[framePointer];
-  imwrite("frame.jpg",*currentFrame);
+  imwrite(imagefile,*currentFrame);
 }
 
 void init_prog(int ac, char * av[] ){
